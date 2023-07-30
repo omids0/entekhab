@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import CharactersList from "./pages/characters";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
-  cache: InMemoryCache(),
+  cache: new InMemoryCache(),
 });
 
 const root = ReactDOM.createRoot(
@@ -16,7 +17,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      {/* <App /> */}
+      <CharactersList />
     </ApolloProvider>
   </React.StrictMode>
 );
