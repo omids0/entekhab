@@ -7,7 +7,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import { BrowserRouter } from "react-router-dom";
 
-// TODO 1-tab name, 2-MUI, 3-Design-pages, 4-remove console.logs, 5-redux, 6-jest, 7-deploy on vercel, 8-make video
+// TODO 1-tab name(done), 2-MUI, 3-Design-pages, 4-remove console.logs, 5-redux, 6-jest, 7-deploy on vercel, 8-make video
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
@@ -17,6 +17,7 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
