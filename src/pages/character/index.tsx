@@ -1,7 +1,10 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 function Character() {
-  return <div></div>;
+  const { id } = useParams();
+
+  return <div>{id}</div>;
 }
 
 export default Character;
