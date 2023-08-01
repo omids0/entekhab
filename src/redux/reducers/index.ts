@@ -1,13 +1,9 @@
-export const getAllCharactersReducers = (
-  state = {},
-  { payload, type }: any
-) => {
-  switch (type) {
+import { AnyAction } from "redux";
+
+export const getAllCharactersReducers = (state = [], action: AnyAction) => {
+  switch (action.type) {
     case "GET_ALL_CHARACTERS":
-      return {
-        ...state,
-        payload,
-      };
+      return [action.payload];
     default:
       return state;
   }

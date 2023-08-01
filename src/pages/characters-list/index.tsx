@@ -1,6 +1,8 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getAllCharactersAction } from "../../redux/actions";
 
 const GET_CHARACTERS = gql`
   query {
@@ -15,7 +17,13 @@ const GET_CHARACTERS = gql`
 `;
 
 function CharactersList() {
-  const { error, loading, data } = useQuery(GET_CHARACTERS);
+  const { error, loading, data } = useQuery(GET_CHARACTERS, {
+    onCompleted(data) {
+      dispatch(getAllCharactersAction(data));
+    },
+  });
+
+  const dispatch = useDispatch();
 
   if (loading) return <div>Loading...</div>;
 

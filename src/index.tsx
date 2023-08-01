@@ -4,10 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { Provider } from "react-redux";
 
 import { BrowserRouter } from "react-router-dom";
+import store from "./redux/store";
 
-// TODO 1-tab name(done), 2-MUI, 3-Design-pages, 4-remove console.logs, 5-redux, 6-jest, 7-deploy on vercel, 8-make video
+// TODO type any !!!
+// TODO 1-tab name(done), 2-MUI, 3-Design-pages, 4-remove console.logs, 5-redux(done), 6-jest, 7-deploy on vercel, 8-make video
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
@@ -22,7 +25,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ApolloProvider client={client}>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>

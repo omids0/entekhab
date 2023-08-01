@@ -1,3 +1,4 @@
-export const getAllCharactersAction = () => async (dispatch: any) => {
-  dispatch({ type: "GET_ALL_CHARACTERS", payload: dispatch });
-};
+export const getAllCharactersAction = (data: any) => ({
+  type: "GET_ALL_CHARACTERS",
+  payload: data,
+});
