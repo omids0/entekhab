@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getAllCharactersAction } from "../../redux/actions";
 
+import { Typography, Grid, Stack } from "@mui/material";
+
 const GET_CHARACTERS = gql`
   query {
     characters {
@@ -30,16 +32,37 @@ function CharactersList() {
   if (error) return <div>Something went wrong...</div>;
 
   return (
-    <div>
-      {data.characters.results.map((item: Record<string, string>) => (
-        <Link to={`/${item.id}`}>
-          <div key={item.id}>
-            <img src={item.image} alt={item.name} />
-            <p>{item.name}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
+    <Stack bgcolor="#FFF000" width="100%">
+      <Stack width="100%" direction="row" justifyContent="center">
+        <Typography variant="h3" my={10} textAlign="center">
+          Rick And Morty Album
+        </Typography>
+      </Stack>
+      <Grid
+        container
+        rowSpacing={{ xs: 1, md: 3 }}
+        columnSpacing={{ xs: 1, md: 3 }}
+        direction={{ xs: "column", md: "row" }}
+        alignItems="center"
+        justifyContent="center"
+      >
+        {data.characters.results.map((item: Record<string, string>) => (
+          <Grid item>
+            <Link to={`/${item.id}`} style={{ width: "fit-content" }}>
+              <Stack
+                key={item.id}
+                p={5}
+                m={2}
+                bgcolor="#FFFFFF"
+                maxWidth="260px"
+              >
+                <img src={item.image} alt={item.name} />
+              </Stack>
+            </Link>
+          </Grid>
+        ))}
+      </Grid>
+    </Stack>
   );
 }
 
