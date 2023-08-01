@@ -52,11 +52,10 @@ function CharactersList() {
               <Stack
                 key={item.id}
                 p={5}
-                m={2}
+                m={{ xs: 0.5, md: 2 }}
                 bgcolor="#FFFFFF"
-                maxWidth="260px"
               >
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={item.name} width="260rem" />
               </Stack>
             </Link>
           </Grid>
