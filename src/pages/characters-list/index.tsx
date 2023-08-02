@@ -6,7 +6,7 @@ import { getAllCharactersAction } from "../../redux/actions";
 import { Typography, Grid, Stack } from "@mui/material";
 import LoadingCharacterList from "./loading";
 
-const GET_CHARACTERS = gql`
+export const GET_CHARACTERS = gql`
   query {
     characters {
       results {
@@ -49,6 +49,7 @@ function CharactersList() {
         {data.characters.results.map((item: Record<string, string>) => (
           <Grid item>
             <Link
+              data-testid="characterItem"
               to={`/${item.id}`}
               style={{
                 width: "fit-content",
