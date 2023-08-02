@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useCharacter } from "./helper";
 import { Stack, Typography } from "@mui/material";
+import LoadingCharacter from "./loading";
 
 function Character() {
   const { id } = useParams();
@@ -8,7 +9,7 @@ function Character() {
   const { data, loading, error } = useCharacter(id);
   console.log("🚀 ~ file: index.tsx:9 ~ Character ~ data:", data);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingCharacter />;
 
   if (error) return <p>Something went wrong...</p>;
 
@@ -20,13 +21,14 @@ function Character() {
       justifyContent="center"
       justifyItems="center"
       alignContent="center"
+      bgcolor="#fffae0"
     >
-      <Stack mx="auto" direction={{ xs: "column", md: "row" }}>
+      <Stack mx="auto" direction={{ xs: "column", md: "row" }} bgcolor="#FFFF">
         <img
           src={data?.character.image}
           alt={data?.character.name}
           width={300}
-          style={{ margin: "0 auto" }}
+          style={{ margin: "auto" }}
         />
         <Stack p={2}>
           <Typography variant="h2" color="">
