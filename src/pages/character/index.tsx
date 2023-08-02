@@ -32,9 +32,15 @@ function Character() {
           <Typography variant="h2" color="">
             {data?.character.name}
           </Typography>
-          <Typography variant="h5" color="#999999">
+          <Typography variant="h6" color="#999999">
             {data?.character.gender}
           </Typography>
+          <Stack my={5} direction="row" alignItems="center" gap={2}>
+            <Typography variant="h5">Episodes:</Typography>
+            <Typography variant="h4" color="#ff0000">
+              {data?.character.episode.length}
+            </Typography>
+          </Stack>
         </Stack>
       </Stack>
     </Stack>
