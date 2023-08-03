@@ -5,7 +5,14 @@ function LoadingCharacterList() {
   return (
     <Stack bgcolor="#fffae0" width="100wh" minHeight="100vh">
       <Stack width="100%" direction="row" justifyContent="center">
-        <Typography variant="h3" my={10} textAlign="center" color="#474747">
+        <Typography
+          variant="h1"
+          my={{ xs: 3, md: 10 }}
+          textAlign="center"
+          color="#333333"
+          fontSize="3rem"
+          fontFamily={"fantasy"}
+        >
           Rick And Morty Album
         </Typography>
       </Stack>

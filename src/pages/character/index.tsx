@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useCharacter } from "./helper";
 import { Stack, Typography } from "@mui/material";
 import LoadingCharacter from "./loading";
+import OnError from "../../components/on-error";
 
 function Character() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ function Character() {
 
   if (loading) return <LoadingCharacter />;
 
-  if (error) return <p>Something went wrong...</p>;
+  if (error) return <OnError />;
 
   return (
     <Stack

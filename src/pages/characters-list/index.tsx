@@ -5,6 +5,7 @@ import { getAllCharactersAction } from "../../redux/actions";
 
 import { Typography, Grid, Stack } from "@mui/material";
 import LoadingCharacterList from "./loading";
+import OnError from "../../components/on-error";
 
 export const GET_CHARACTERS = gql`
   query {
@@ -29,12 +30,19 @@ function CharactersList() {
 
   if (loading) return <LoadingCharacterList />;
 
-  if (error) return <div>Something went wrong...</div>;
+  if (error) return <OnError />;
 
   return (
     <Stack bgcolor="#fffae0" width="100%">
       <Stack width="100%" direction="row" justifyContent="center">
-        <Typography variant="h3" my={10} textAlign="center" color="#474747">
+        <Typography
+          variant="h1"
+          my={{ xs: 3, md: 10 }}
+          textAlign="center"
+          color="#333333"
+          fontSize="3rem"
+          fontFamily={"fantasy"}
+        >
           Rick And Morty Album
         </Typography>
       </Stack>
@@ -61,6 +69,10 @@ function CharactersList() {
                 m={{ xs: 0.5, md: 2 }}
                 bgcolor="#FFFFFF"
                 boxShadow={3}
+                minHeight={260}
+                maxHeight={260}
+                minWidth={260}
+                maxWidth={260}
               >
                 <img src={item.image} alt={item.name} width="260rem" />
               </Stack>
