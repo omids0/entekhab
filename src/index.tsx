@@ -9,8 +9,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "./redux/store";
 
-// TODO type any !!!
-// TODO 1-tab name(done), 2-MUI(done), 3-Design-pages, 4-remove console.logs, 5-redux(done), 6-jest, 7-deploy on vercel, 8-make video
+// TODO  3-Design-pages, 7-deploy on vercel, 8-make video
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",

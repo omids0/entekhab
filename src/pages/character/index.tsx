@@ -7,7 +7,6 @@ function Character() {
   const { id } = useParams();
 
   const { data, loading, error } = useCharacter(id);
-  console.log("🚀 ~ file: index.tsx:9 ~ Character ~ data:", data);
 
   if (loading) return <LoadingCharacter />;
 

@@ -21,7 +21,7 @@ export const GET_CHARACTERS = gql`
 function CharactersList() {
   const { error, loading, data } = useQuery(GET_CHARACTERS, {
     onCompleted(data) {
-      dispatch(getAllCharactersAction(data));
+      dispatch(getAllCharactersAction(data.characters.results));
     },
   });
 
