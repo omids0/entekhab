@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Rick And Morty Album
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Deploy on [Vercel](https://entekhab-iota.vercel.app/).
+
+In this project on main page showing list of all characters and by clicking on each character, showing details of that character such as name, gender, and episodes.
 
 ## Available Scripts
 
